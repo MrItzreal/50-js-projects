@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  /* The course instructor universally add this so that if he adds padding or 
+  border onto an element, it won't affect the width of it*/
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c2eaba;
+  background-image: linear-gradient(
+    319deg,
+    #c2eaba 0%,
+    #c5f4e0 37%,
+    #efc2cf 100%
+  );
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.text {
+  font-size: 24px;
+  position: absolute;
+  margin-bottom: 90vh;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  color: #2a272a;
+  opacity: 0.8;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+  margin-top: 20px;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.7;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .text {
+    font-size: 14px;
+  }
+}
+/* Added gradient to make the background look better */
