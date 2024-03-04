@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anta&display=swap");
 
 * {
   /* we universally add this so that if we add padding or 
@@ -13,20 +13,22 @@ body {
     rgba(34, 193, 195, 1) 0%,
     rgba(215, 179, 100, 1) 100%
   );
-  font-family: roboto, sans-serif;
+  font-family: "Anta", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0;
+  overflow-x: hidden;
 }
 
 h1 {
   margin: 10px;
+  color: #fffcf9e3;
 }
 
 .box {
-  background-color: steelblue;
+  background-image: linear-gradient(135deg, #ffd26f 10%, #3677ff 100%);
   color: #fff;
   display: flex;
   align-items: center;
@@ -36,4 +38,20 @@ h1 {
   margin: 10px;
   border-radius: 10px;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even) {
+  /* This helps each h2 to go
+  one goes left other goes right */
+  transform: translateX(-400%);
+}
+
+.box.show {
+  transform: translateX(0);
+}
+
+.box h2 {
+  font-size: 45px;
 }
