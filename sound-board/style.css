@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+* {
+  /* we universally add this so that if we add padding or 
+  border onto an element, it won't affect the width of it*/
+  box-sizing: border-box;
+}
+
+body {
+  background: #571dc2;
+  background: radial-gradient(at left top, #571dc2, #a5ed6e);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.btn {
+  background-image: linear-gradient(
+    to right bottom,
+    #a5ed6e,
+    #e1ab05,
+    #f27d6b,
+    #e1007d,
+    #571dc2
+  );
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  margin: 1rem;
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+  font-family: inherit;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.5;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
