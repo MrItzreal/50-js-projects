@@ -3,15 +3,15 @@ const liters = document.getElementById("liters");
 const percentage = document.getElementById("percentage");
 const remained = document.getElementById("remained");
 
-smallCups.forEach((cup, i) => {
+smallCups.forEach((cup, idx) => {
   cup.addEventListener("click", () => {
-    highlightCups(i);
+    highlightCups(idx);
   });
 });
 
-function highlightCups(i) {
-  smallCups.forEach((cup, i2) => {
-    if (i2 <= i) {
+function highlightCups(idx) {
+  smallCups.forEach((cup, idx2) => {
+    if (idx2 <= idx) {
       cup.classList.add("full");
     } else {
       cup.classList.remove("full");
