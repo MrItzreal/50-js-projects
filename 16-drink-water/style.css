@@ -106,5 +106,7 @@ h3 {
 
 .text {
   text-align: center;
+  font-weight: bold;
+
   margin: 0 0 5px;
 }
