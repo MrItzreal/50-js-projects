@@ -20,8 +20,10 @@ async function getMovies(url) {
 
 function showMovies(movies) {
   main.innerHTML = "";
-  //Destructuring
+
   movies.forEach((movie) => {
+    //Destructuring.
+    //parameters all come from the API URL above.
     const { title, poster_path, vote_average, overview } = movie;
 
     const movieEl = document.createElement("div");
