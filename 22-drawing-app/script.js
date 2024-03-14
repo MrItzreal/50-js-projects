@@ -1,10 +1,41 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+// Global Variables
 let size = 20;
+let isPressed = false;
 let color = "white";
 let x;
 let y;
+
+canvas.addEventListener("mousedown", (e) => {
+  isPressed = true;
+
+  //position of where the mouse is
+  x = e.offsetX;
+  y = e.offsetY;
+});
+
+canvas.addEventListener("mouseup", (e) => {
+  isPressed = false;
+
+  //when unclick the mouse it clears position
+  x = "undefined";
+  y = undefined;
+});
+
+canvas.addEventListener("mousemove", (e) => {
+  if (isPressed) {
+    const x2 = e.offsetX;
+    const y2 = e.offsetY;
+
+    drawCircle(x2, y2);
+    drawLine(x, y, x2, y2);
+
+    x = x2;
+    y = y2;
+  }
+});
 
 function drawCircle(x, y) {
   ctx.beginPath();
@@ -18,7 +49,7 @@ function drawLine(x1, y1, x2, y2) {
   ctx.moveTo(x1, y1);
   ctx.lineTo(x2, y2);
   ctx.strokeStyle = color;
-  ctx.lineWidth = size;
+  ctx.lineWidth = size * 2;
   ctx.stroke();
 }
 
