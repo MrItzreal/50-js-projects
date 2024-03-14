@@ -7,12 +7,56 @@
 }
 
 body {
+  background-color: rgb(12, 28, 41);
   font-family: roboto, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
   margin: 0;
+}
+
+canvas {
+  border: 2px solid #f5f5f5;
+  border-radius: 5px;
+}
+
+.toolbox {
+  background-color: steelblue;
+  border: 1px solid slateblue;
+  display: flex;
+  width: 804px;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.toolbox > * {
+  background-color: #fff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  height: 50px;
+  width: 50px;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.toolbox > *:last-child {
+  margin-left: auto;
+}
+
+@media (max-width: 800px) {
+  canvas {
+    width: 500px;
+    height: 500px;
+  }
+
+  .toolbox {
+    width: 500px;
+    padding: 8px;
+  }
 }
