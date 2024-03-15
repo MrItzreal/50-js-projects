@@ -7,4 +7,7 @@ function fixNav() {
   } else {
     nav.classList.remove("active");
   }
+  // console.log(window.scrollY, nav.offsetHeight);
+  //if you log this you'll see that as soon as the,
+  //Y-axis goes 150 over the offsetHeight the nav goes white.
 }
