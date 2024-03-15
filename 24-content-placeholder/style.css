@@ -26,6 +26,7 @@ img {
   border-radius: 10px;
   overflow: hidden;
   width: 350px;
+  margin: 10px;
 }
 
 .card-header {
