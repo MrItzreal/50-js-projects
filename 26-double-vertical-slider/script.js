@@ -7,6 +7,9 @@ const slidesLength = slideRight.querySelectorAll("div").length;
 
 let activeSlideIndex = 0;
 
+//We subtract 1 from slidesLength because we need to start with,
+//the third slide due to zero-based indexing in JS. While we
+//have 4 slides, arrays and node lists start counting at 0.
 slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`;
 
 upButton.addEventListener("click", () => changeSlide("up"));
