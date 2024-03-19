@@ -40,6 +40,7 @@ body {
 }
 .user-form input::placeholder {
   color: #bbb;
+  text-align: center;
 }
 
 .user-form input:focus {
