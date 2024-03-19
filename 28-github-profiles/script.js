@@ -6,7 +6,9 @@ const main = document.getElementById("main");
 async function getUser(username) {
   try {
     const { data } = await axios(APIURL + username);
+
     createUserCard(data);
+    getRepos(username);
   } catch (err) {
     if (err.response.status == 404) {
       createErrorCard("No profile with this username");
@@ -14,7 +16,21 @@ async function getUser(username) {
   }
 }
 
+async function getRepos(username) {
+  //repos?sort=created gives us the latest repos
+  try {
+    const { data } = await axios(APIURL + username + "/repos?sort=created");
+
+    addReposToCard(data);
+  } catch (err) {
+    createErrorCard("Problem Fetching Repo");
+  }
+}
+
 function createUserCard(user) {
+  // Refactored HTML into JS templates.
+  // user is the parameter and the attached properties
+  // come from the api: https://api.github.com/users/mritzreal
   const cardHTML = `
   <div class="card">
   <div>
@@ -46,6 +62,8 @@ function createUserCard(user) {
 }
 
 function createErrorCard(msg) {
+  //we inserted this html so when we search for
+  //a non existing profile the err msg will show on screen
   const cardHTML = `
   <div class="card">
   <h1>${msg}</h1>
@@ -55,7 +73,23 @@ function createErrorCard(msg) {
   main.innerHTML = cardHTML;
 }
 
+function addReposToCard(repos) {
+  const reposEl = document.getElementById("repos");
+
+  //.slice() helps us reduce the number of repos that would appear.The number (e.g.,5) specifies how many repos appear If you use 10, it will show 10.
+  repos.slice(0, 5).forEach((repo) => {
+    const repoEl = document.createElement("a");
+    repoEl.classList.add("repo");
+    repoEl.href = repo.html_url; //adds link
+    repoEl.target = "_blank"; //opens new window
+    repoEl.innerText = repo.name; //inserts repo's name
+
+    reposEl.appendChild(repoEl);
+  });
+}
+
 form.addEventListener("submit", (e) => {
+  // Listens for form submissions, grabs the username, fetches user data (if provided), and clears the input.
   e.preventDefault();
 
   const user = search.value;
