@@ -28,6 +28,10 @@ clipboardEl.addEventListener("click", () => {
   document.execCommand("copy");
   textarea.remove();
   alert("Password copied to clipboard!");
+
+  //using async/await with navigator.clipboard.writeText
+  //is a better and modern wait to get the same clipboard
+  //effect I left this old way,to stick to the course.
 });
 
 generateEl.addEventListener("click", () => {
@@ -50,8 +54,8 @@ generateEl.addEventListener("click", () => {
 function generatePassword(lower, upper, number, symbol, length) {
   let generatedPassword = "";
   const typesCount = lower + upper + number + symbol;
+  //typesArr shows unchecked items. [0] will be 1st checked item.
   const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(
-    //only shows unchecked items. [0] will be 1st checked item.
     (item) => Object.values(item)[0]
   );
 
@@ -67,6 +71,7 @@ function generatePassword(lower, upper, number, symbol, length) {
   }
   const finalPassword = generatedPassword.slice(0, length);
   return finalPassword;
+  //length is the input from "Password Length"
 }
 
 function getRandomLower() {
