@@ -19,6 +19,7 @@ NOTE: I made this roadmap based on what was made first! So do not get confused w
 - Add an event listener to the generate button. Inside the listener:
   - Get the desired password length by converting the length input value to a number (using `+`).
   - Check the state of the checkbox elements for lowercase, uppercase, numbers, and symbols.
+  - resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length); - This line calls the function named generatePassword. It passes five arguments to the function.
 
 **5. Generate Password Function:**
 
