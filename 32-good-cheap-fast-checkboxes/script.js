@@ -24,3 +24,7 @@ function doTheTrick(theClickedOne) {
     }
   }
 }
+
+// .checked is used when you have a checkbox and you want to
+// bring it into the DOM and see if is checked or not and it
+// will be as true or false.
