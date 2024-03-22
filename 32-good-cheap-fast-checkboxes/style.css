@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
 
 * {
   /* we universally add this so that if we add padding or 
@@ -7,8 +7,13 @@
 }
 
 body {
-  background-color: rgb(20, 38, 52);
-  font-family: roboto, sans-serif;
+  background-image: url("https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=913&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +28,7 @@ body {
   align-items: center;
   margin: 10px 0;
   width: 200px;
+  font-size: 20px;
 }
 
 .toggle {
@@ -41,7 +47,7 @@ body {
 }
 
 .toggle:checked + .label {
-  background-color: #8e44ad;
+  background-color: #854d9d;
 }
 
 .ball {
