@@ -68,3 +68,9 @@ function updateLS() {
 
 //SessionStorage: data is saved until you close window,
 //once closed the data is cleared.
+
+//Local storage uses the key & value pairs:
+// Examples:
+// localStorage.setItem("name","Izzy");
+// localStorage.getItem("name");
+// localStorage.removeItem("name");
