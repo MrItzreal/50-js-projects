@@ -1,5 +1,11 @@
 const addBtn = document.getElementById("add");
 
+const notes = JSON.parse(localStorage.getItem("notes"));
+
+if (notes) {
+  notes.forEach((note) => addNewNote(note));
+}
+
 addBtn.addEventListener("click", () => addNewNote());
 
 function addNewNote(text = "") {
@@ -27,6 +33,8 @@ function addNewNote(text = "") {
 
   deleteBtn.addEventListener("click", () => {
     note.remove();
+
+    updateLS();
   });
 
   editBtn.addEventListener("click", () => {
@@ -38,7 +46,25 @@ function addNewNote(text = "") {
     const { value } = e.target;
 
     main.innerHTML = marked(value);
+
+    updateLS();
   });
 
   document.body.appendChild(note);
 }
+
+function updateLS() {
+  const notesText = document.querySelectorAll("textarea");
+
+  const notes = [];
+
+  notesText.forEach((note) => notes.push(note.value));
+
+  localStorage.setItem("notes", JSON.stringify(notes));
+}
+
+//localStorage: data is saved even after closing window,
+//it only deletes when you explicitly clear it yourself.
+
+//SessionStorage: data is saved until you close window,
+//once closed the data is cleared.
