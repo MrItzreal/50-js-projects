@@ -17,6 +17,7 @@ const colors = {
   normal: "#F5F5F5",
 };
 
+//this access the array of pokemon types
 const main_types = Object.keys(colors);
 
 const fetchPokemons = async () => {
@@ -37,16 +38,20 @@ const createPokemonCard = (pokemon) => {
   const pokemonEl = document.createElement("div");
   pokemonEl.classList.add("pokemon");
 
+  //capitalize 1st letter
   const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
 
+  //pads extra zeros for the id
   const id = pokemon.id.toString().padStart(3, "0");
 
+  //array containing the specific types of a particular Pokémon
   const poke_types = pokemon.types.map((type) => type.type.name);
 
+  //adds the type to the pokemon card.
   const type = main_types.find((type) => poke_types.indexOf(type) > -1);
 
+  //assigns background colors to Pokémon cards based on type
   const color = colors[type];
-
   pokemonEl.style.backgroundColor = color;
 
   const pokemonInnerHTML = `
