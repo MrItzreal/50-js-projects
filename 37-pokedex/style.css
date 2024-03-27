@@ -48,8 +48,11 @@ h1 {
 }
 
 .pokemon .img-container img {
-  max-width: 90%;
-  margin-top: 20px;
+  /* max-width: 90%; */
+  /* margin-top: 20px; */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .pokemon .info {
