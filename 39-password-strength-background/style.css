@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
 * {
   /* we universally add this so that if we add padding or 
   border onto an element, it won't affect the width of it*/
@@ -7,7 +5,6 @@
 }
 
 body {
-  font-family: roboto, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,4 +12,16 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+.background {
+  background: url("https://images.unsplash.com/photo-1516331138075-f3adc1e149cd")
+    no-repeat center center/cover;
+  position: absolute;
+  top: -20px; /*negative value because when we add blur it comes away from the edges of page*/
+  bottom: -20px;
+  left: -20px;
+  right: -20px;
+  z-index: -1;
+  filter: blur(20px);
 }
