@@ -7,6 +7,7 @@
 }
 
 body {
+  background-color: steelblue;
   font-family: roboto, sans-serif;
   display: flex;
   flex-direction: column;
