@@ -1,5 +1,7 @@
 const result = document.getElementById("result");
 const filter = document.getElementById("filter");
+
+//Empty array where we insert(".push") the fetched data.
 const listItems = [];
 
 getData();
