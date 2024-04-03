@@ -87,9 +87,11 @@ submitBtn.addEventListener("click", () => {
 
   if (answer) {
     if (answer === quizData[currentQuiz].correct) {
+      //Score number goes up 1 by each correct answer.
       score++;
     }
 
+    //currentQuiz++ = next quiz thus why plus 1.
     currentQuiz++;
 
     if (currentQuiz < quizData.length) {
