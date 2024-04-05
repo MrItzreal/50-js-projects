@@ -53,12 +53,15 @@ function createInsect() {
   const insect = document.createElement("div");
   insect.classList.add("insect");
   const { x, y } = getRandomLocation();
+  //Results for .top/.left below is based on the equation of getRandomLocation()
   insect.style.top = `${y}px`;
   insect.style.left = `${x}px`;
   insect.innerHTML = `
-  <img src="${selected_insect.src}" alt"${
-    selected_insect.alt
-  }" style="transform: rotate(${Math.random() * 360}deg)"/>`;
+  <img 
+  src="${selected_insect.src}" 
+  alt"${selected_insect.alt}" 
+  style="transform: rotate(${Math.random() * 360}deg)"
+  />`;
 
   insect.addEventListener("click", catchInsect);
 
