@@ -1,3 +1,7 @@
 Roadmap To Rewrite The JavaScript Yourself:
 
-Prompt: I want to be able to write this code by myself. Could you please turn it into bullet points instead so I can use it as a roadmap to eventually re write this? ADD CODE
+I decided NOT to add a roadmap to this project because there are many different pieces that make up this build. Including a roadmap wouldn't do justice to its complexity. If you get lost, I recommend reviewing the video as many times as needed until the concepts become clear.
+
+This is project #50, so by now you should be familiar with all the concepts covered in this project.
+
+The only new thing is the use of "this." Everything else has been covered in this course, so even if you can't build it now, you should be able to read the code and understand what it does.
