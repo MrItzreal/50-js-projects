@@ -28,6 +28,29 @@
         <div
           class="w-[calc(100% - 4px)] bg-gray-800 aspect-square rounded-full absolute inset-[2px]"
         ></div>
+
+        <!-- Create hand/marker -->
+        <div class="hand h-1/2 absolute top-0">
+          <span class="w-2 h-2 bg-white rounded-full absolute -top-1 -left-1">
+          </span>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex justify-center gap-6">
+        <button
+          id="reset"
+          class="flex justify-center items-center w-10 h-10 bg-blue-300 rounded-full text-black"
+        >
+          <i class="fas fa-sync"></i>
+        </button>
+
+        <button
+          id="play"
+          class="flex justify-center items-center w-10 h-10 bg-blue-300 rounded-full text-black"
+        >
+          <i class="fas fa-play"></i>
+        </button>
       </div>
     </div>
     <script src="script.js"></script>
